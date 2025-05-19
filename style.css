@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sky {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    to top,
+    #a4d4f5 0%,
+    #87ceeb 40%,
+    #6bbce8 70%,
+    #ffffff 100%
+  );
+}
+/* Cloud base style */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow:
+    -30px 10px 0 10px #fff,
+    30px 10px 0 10px #fff,
+    0px 0px 0 20px #fff;
+  width: 100px;
+  height: 60px;
+  animation: floatClouds 80s linear infinite;
+}
+
+/* Cloud 1 */
+.cloud1 {
+  top: 15%;
+  left: -150px;
+  animation-duration: 100s;
+}
+
+/* Cloud 2 */
+.cloud2 {
+  top: 30%;
+  left: -250px;
+  animation-duration: 120s;
+}
+
+/* Float animation */
+@keyframes floatClouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+.rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0px,
+    rgba(255, 255, 255, 0.2) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+  animation: rainFall 0.5s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes rainFall {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
